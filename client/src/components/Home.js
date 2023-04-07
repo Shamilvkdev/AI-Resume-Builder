@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Home = () => {
+const Home = ({ setResult }) => {
     const [fullName, setFullName] = useState("");
     const [currentPosition, setCurrentPosition] = useState("");
     const [currentLength, setCurrentLength] = useState(1);
@@ -9,19 +11,8 @@ const Home = () => {
     const [headshot, setHeadshot] = useState(null);
     const [loading, setLoading] = useState(false);
     const [companyInfo, setCompanyInfo] = useState([{ name: "", position: "" }]);
+    const navigate = useNavigate();
 
-
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        console.log({
-            fullName,
-            currentPosition,
-            currentLength,
-            currentTechnologies,
-            headshot,
-        });
-        setLoading(true);
-    };
 
         //👇🏻 updates the state with user's input
         const handleAddCompany = () =>
@@ -41,6 +32,28 @@ const Home = () => {
         setCompanyInfo(list);
         };
 
+        const handleFormSubmit = (e) => {
+            e.preventDefault();
+    
+            const formData = new FormData();
+            formData.append("headshotImage", headshot, headshot.name);
+            formData.append("fullName", fullName);
+            formData.append("currentPosition", currentPosition);
+            formData.append("currentLength", currentLength);
+            formData.append("currentTechnologies", currentTechnologies);
+            formData.append("workHistory", JSON.stringify(companyInfo));
+            axios
+                .post("http://localhost:4000/resume/create", formData, {})
+                .then((res) => {
+                    if (res.data.message) {
+                        setResult(res.data.data);
+                        navigate("/resume");
+                    }
+                })
+                .catch((err) => console.error(err));
+            setLoading(true);
+        };
+
     //👇🏻 Renders the Loading component you submit the form
     if (loading) {
         return <Loading />;
@@ -49,7 +62,7 @@ const Home = () => {
         <div className='app'>
             <h1>Resume Builder</h1>
             <p>Generate a resume with ChatGPT in few seconds</p>
-            <form
+         <form
                 onSubmit={handleFormSubmit}
                 method='POST'
                 encType='multipart/form-data'
@@ -107,11 +120,9 @@ const Home = () => {
                     accept='image/x-png,image/jpeg'
                     onChange={(e) => setHeadshot(e.target.files[0])}
                 />
-            </form>
 
             <h3>Companies you've worked at</h3>
-            <form>
-            {/*--- other UI tags --- */}
+
             {companyInfo.map((company, index) => (
                 <div className='nestedContainer' key={index}>
                     <div className='companies'>
@@ -149,9 +160,9 @@ const Home = () => {
             ))}
 
             <button>CREATE RESUME</button>
-        </form>
 
-        </div>
+        </form>
+    </div>
     );
 };
 
