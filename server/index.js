@@ -25,11 +25,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 1024 * 1024 * 5 },
+    limits: { fileSize: 1024 * 1024 * 20 },
 });
 
 const configuration = new Configuration({
-    apiKey: "API-KEY",
+    apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
