@@ -82,6 +82,7 @@ const remainderText = () => {
     }
     return stringText;
 };
+
 //👇🏻 The job description prompt
 const prompt1 = `I am writing a resume, my details are \n name: ${fullName} \n role: ${currentPosition} (${currentLength} years). \n I write in the technolegies: ${currentTechnologies}. Can you write a 100 words description for the top of the resume(first person writing)?`;
 
@@ -93,12 +94,10 @@ const prompt3 = `I am writing a resume, my details are \n name: ${fullName} \n r
     workArray.length
 } companies. ${remainderText()} \n Can you write me 50 words for each company seperated in numbers of my succession in the company (in first person)?`;
 
-//👇🏻 generate a GPT-3 result
 const objective = await GPTFunction(prompt1);
 const keypoints = await GPTFunction(prompt2);
 const jobResponsibilities = await GPTFunction(prompt3);
 
-//👇🏻 put them into an object
 const chatgptData = { objective, keypoints, jobResponsibilities };
 const data = { ...newEntry, ...chatgptData }
 database.push(data);
