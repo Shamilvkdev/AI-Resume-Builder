@@ -44,7 +44,7 @@ const GPTFunction = async (text) => {
         max_tokens: 250,
         top_p: 1,
         frequency_penalty: 1,
-        presence_penalty: 1,
+        presence_penalty: 1, 
     });
     return response.data.choices[0].text;
 };
@@ -111,5 +111,5 @@ database.push(data);
 
 
 app.listen(PORT, () => {
-    console.log(`server listening on ${PORT}`);
+    console.log(`AI server listening on ${PORT}`);
 }) 
