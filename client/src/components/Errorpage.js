@@ -5,8 +5,8 @@ const ErrorPage = () => {
     return (
         <div className='app'>
             <h3>
-                You've not provided your details. Kindly head back to the{" "}
-                <Link to='/'>homepage</Link>.
+                You've not provided the neccessery details. Kindly head back to the{" "}
+                <Link to='/'>Homepage</Link>.
             </h3>
         </div>
     );
