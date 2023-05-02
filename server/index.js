@@ -58,11 +58,11 @@ app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
         currentTechnologies,
         workHistory,
     } = req.body;
+    
     console.log(req.body);
 
     const workArray = JSON.parse(workHistory); //an array
 
-    //👇🏻 group the values into an object
     const newEntry = {
         id: generateID(),
         fullName,
