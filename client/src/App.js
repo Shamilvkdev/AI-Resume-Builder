@@ -5,7 +5,6 @@ import Resume from "./components/Resume";
 
 const App = () => {
 
-     //👇🏻 state holding the result
      const [result, setResult] = useState({});
 
     return (
