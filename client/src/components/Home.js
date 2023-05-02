@@ -159,7 +159,7 @@ const Home = ({ setResult }) => {
                 </div>
             ))}
 
-            <button>CREATE RESUME</button>
+            <button> CREATE RESUME </button>
 
         </form>
     </div>
