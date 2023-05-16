@@ -49,7 +49,6 @@ const GPTFunction = async (text) => {
     return response.data.choices[0].text;
 };
 
-// route
 app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
     const {
         fullName,
