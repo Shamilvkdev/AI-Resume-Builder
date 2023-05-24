@@ -121,7 +121,7 @@ const Home = ({ setResult }) => {
                     onChange={(e) => setHeadshot(e.target.files[0])}
                 />
 
-            <h3>Companies you've worked at</h3>
+            <h3>Companies you've worked at...</h3>
 
             {companyInfo.map((company, index) => (
                 <div className='nestedContainer' key={index}>
@@ -133,6 +133,7 @@ const Home = ({ setResult }) => {
                             required
                             onChange={(e) => handleUpdateCompany(e, index)}
                         />
+
                     </div>
                     <div className='companies'>
                         <label htmlFor='position'>Position Held</label>
@@ -150,6 +151,7 @@ const Home = ({ setResult }) => {
                                 Add
                             </button>
                         )}
+                        
                         {companyInfo.length > 1 && (
                             <button id='deleteBtn' onClick={() => handleRemoveCompany(index)}>
                                 Del
