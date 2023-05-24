@@ -61,7 +61,7 @@ const Home = ({ setResult }) => {
     return (
         <div className='app'>
             <h1>Resume Builder</h1>
-            <p>Generate a resume with ChatGPT in few seconds</p>
+            <p>Generate a Resume with the help of ChatGPT in few seconds...</p>
          <form
                 onSubmit={handleFormSubmit}
                 method='POST'
@@ -151,7 +151,7 @@ const Home = ({ setResult }) => {
                                 Add
                             </button>
                         )}
-                        
+
                         {companyInfo.length > 1 && (
                             <button id='deleteBtn' onClick={() => handleRemoveCompany(index)}>
                                 Del
