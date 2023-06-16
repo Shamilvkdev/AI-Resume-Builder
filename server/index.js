@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 1024 * 1024 * 20 },
+    limits: { fileSize: 1024 * 1024 * 30 },
 });
 
 const configuration = new Configuration({
@@ -56,8 +56,7 @@ app.post("/resume/create", upload.single("headshotImage"), async (req, res) => {
         currentLength,
         currentTechnologies,
         workHistory,
-    } = req.body;
-    
+    } = req.body;  
     console.log(req.body);
 
     const workArray = JSON.parse(workHistory); //an array
