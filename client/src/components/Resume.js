@@ -12,7 +12,6 @@ const Resume = ({ result }) => {
         onAfterPrint: () => alert("Print Successful!"),
     });
 
-    
     //👇🏻 returns an error page if the result object is empty
     if (JSON.stringify(result) === "{}") {
         return <ErrorPage />;
@@ -22,7 +21,6 @@ const Resume = ({ result }) => {
      const replaceWithBr = (string) => {
         return string.replace(/\n/g, "<br />");
     };
-
 
     return (
         <>
