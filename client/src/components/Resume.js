@@ -55,7 +55,7 @@ const Resume = ({ result }) => {
                         />
                     </div>
                     <div>
-                        <h2 className='resumeBodyTitle'>WORK HISTORY</h2>
+                        <h2 className='resumeBodyTitle'>WORKING HISTORY</h2>
                         {result.workHistory.map((work) => (
                             <p className='resumeBodyContent' key={work.name}>
                                 <span style={{ fontWeight: "bold" }}>{work.name}</span> -{" "}
