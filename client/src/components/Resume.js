@@ -13,7 +13,8 @@ const Resume = ({ result }) => {
     });
 
     //👇🏻 returns an error page if the result object is empty
-    if (JSON.stringify(result) === "{}") {
+    if (JSON.stringify(result) === "{}")
+    {
         return <ErrorPage />;
     }
      
