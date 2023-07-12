@@ -66,7 +66,7 @@ const Home = ({ setResult }) => {
                 method='POST'
                 encType='multipart/form-data'
             >
-                <label htmlFor='fullName'>Enter your full name</label>
+                <label htmlFor='fullName'>Enter your Full Name</label>
                 <input
                     type='text'
                     required
