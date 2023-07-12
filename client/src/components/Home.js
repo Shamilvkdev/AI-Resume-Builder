@@ -54,7 +54,6 @@ const Home = ({ setResult }) => {
             setLoading(true);
         };
 
-    //👇🏻 Renders the Loading component you submit the form
     if (loading) {
         return <Loading />;
     }
