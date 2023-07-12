@@ -34,7 +34,7 @@ const Resume = ({ result }) => {
                             {result.currentPosition} ({result.currentTechnologies})
                         </p>
                         <p className='resumeTitle'>
-                            {result.currentLength}year(s) work experience
+                            {result.currentLength}year(s) of work experience
                         </p>
                     </div>
                     <div>
