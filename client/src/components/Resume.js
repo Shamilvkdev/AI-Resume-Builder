@@ -9,7 +9,7 @@ const Resume = ({ result }) => {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
         documentTitle: `${result.fullName} Resume`,
-        onAfterPrint: () => alert("Resume Successfull!"),
+        onAfterPrint: () => alert("Resume Successfully Created...!"),
     });
 
     //👇🏻 returns an error page if the result object is empty
