@@ -74,7 +74,7 @@ const Resume = ({ result }) => {
                         />
                     </div>
                     <div>
-                        <h2 className='resumeBodyTitle'>JOB RESPONSIBILITIES</h2>
+                        <h2 className='resumeBodyTitle'>JOB TASKS/RESPONSIBILTIES</h2>
                         <p
                             dangerouslySetInnerHTML={{
                                 __html: replaceWithBr(result.keypoints),
