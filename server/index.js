@@ -101,7 +101,7 @@ const data = { ...newEntry, ...chatgptData }
 database.push(data);
 
     res.json({
-        message: "Request successfull!",
+        message: "Request submited successfull!",
         data,
     });
 });
