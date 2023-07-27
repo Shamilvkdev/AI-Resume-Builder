@@ -25,7 +25,7 @@ const Resume = ({ result }) => {
 
     return (
         <>
-            <button onClick={handlePrint}>Print Page</button>
+            <button onClick={handlePrint}>Print Resume</button>
             <main className='container' ref={componentRef}>
             <header className='header'>
                     <div>
@@ -34,7 +34,7 @@ const Resume = ({ result }) => {
                             {result.currentPosition} ({result.currentTechnologies})
                         </p>
                         <p className='resumeTitle'>
-                            {result.currentLength}year(s) of work experience
+                            {result.currentLength}year(s) of working experience
                         </p>
                     </div>
                     <div>
